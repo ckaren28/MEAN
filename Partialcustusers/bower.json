@@ -1,0 +1,21 @@
+{
+  "name": "Partials_With_Custom_Users",
+  "authors": [
+    "Karen Chin <c.karen28@gmail.com>"
+  ],
+  "description": "using angular routes",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/ckaren28/Friends",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.5",
+    "angular": "^1.5.5"
+  }
+}

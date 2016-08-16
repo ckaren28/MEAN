@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'angular-routes' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose install initial load of /Users/Karen/Desktop/Partialcustusers/package.json
+5 warn package.json Partialcustusers@1.0.0 No description
+6 warn package.json Partialcustusers@1.0.0 No repository field.
+7 warn package.json Partialcustusers@1.0.0 No README data
+8 verbose installManyTop reading scoped package data from /Users/Karen/Desktop/Partialcustusers/node_modules/body-parser/package.json
+9 verbose installManyTop reading scoped package data from /Users/Karen/Desktop/Partialcustusers/node_modules/express/package.json
+10 verbose installManyTop reading scoped package data from /Users/Karen/Desktop/Partialcustusers/node_modules/mongoose/package.json
+11 verbose installManyTop reading scoped package data from /Users/Karen/Desktop/Partialcustusers/node_modules/path/package.json
+12 info package.json path@0.12.7 path is also the name of a node core module.
+13 verbose readDependencies loading dependencies from /Users/Karen/Desktop/Partialcustusers/package.json
+14 silly cache add args [ 'angular-routes', null ]
+15 verbose cache add spec angular-routes
+16 silly cache add parsed spec Result {
+16 silly cache add   raw: 'angular-routes',
+16 silly cache add   scope: null,
+16 silly cache add   name: 'angular-routes',
+16 silly cache add   rawSpec: '',
+16 silly cache add   spec: 'latest',
+16 silly cache add   type: 'tag' }
+17 silly addNamed angular-routes@latest
+18 verbose addNamed "latest" is being treated as a dist-tag for angular-routes
+19 info addNameTag [ 'angular-routes', 'latest' ]
+20 silly mapToRegistry name angular-routes
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'angular-routes',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   name: 'angular-routes',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri https://registry.npmjs.org/angular-routes
+25 verbose addNameTag registry:https://registry.npmjs.org/angular-routes not in flight; fetching
+26 verbose request uri https://registry.npmjs.org/angular-routes
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 3:58:13 PM
+29 verbose request id c235cdf918cfdcfd
+30 http request GET https://registry.npmjs.org/angular-routes
+31 http 404 https://registry.npmjs.org/angular-routes
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=0',
+32 verbose headers   'content-length': '2',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Mon, 15 Aug 2016 19:58:13 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   age: '0',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-iad2639-IAD',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1471291093.445971,VS0,VE60',
+32 verbose headers   vary: 'Accept-Encoding' }
+33 silly get cb [ 404,
+33 silly get   { 'content-type': 'application/json',
+33 silly get     'cache-control': 'max-age=0',
+33 silly get     'content-length': '2',
+33 silly get     'accept-ranges': 'bytes',
+33 silly get     date: 'Mon, 15 Aug 2016 19:58:13 GMT',
+33 silly get     via: '1.1 varnish',
+33 silly get     age: '0',
+33 silly get     connection: 'keep-alive',
+33 silly get     'x-served-by': 'cache-iad2639-IAD',
+33 silly get     'x-cache': 'MISS',
+33 silly get     'x-cache-hits': '0',
+33 silly get     'x-timer': 'S1471291093.445971,VS0,VE60',
+33 silly get     vary: 'Accept-Encoding' } ]
+34 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/angular-routes
+34 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+34 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+34 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+34 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+34 verbose stack     at emitTwo (events.js:87:13)
+34 verbose stack     at Request.emit (events.js:172:7)
+34 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+34 verbose stack     at emitOne (events.js:82:20)
+34 verbose stack     at Request.emit (events.js:169:7)
+34 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+35 verbose statusCode 404
+36 verbose pkgid angular-routes
+37 verbose cwd /Users/Karen/Desktop/Partialcustusers
+38 error Darwin 15.5.0
+39 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "angular-routes"
+40 error node v4.4.7
+41 error npm  v2.15.8
+42 error code E404
+43 error 404 Registry returned 404 for GET on https://registry.npmjs.org/angular-routes
+43 error 404
+43 error 404 'angular-routes' is not in the npm registry.
+43 error 404 You should bug the author to publish it (or use the name yourself!)
+43 error 404 It was specified as a dependency of 'Partialcustusers'
+43 error 404
+43 error 404 Note that you can also install from a
+43 error 404 tarball, folder, http url, or git url.
+44 verbose exit [ 1, true ]

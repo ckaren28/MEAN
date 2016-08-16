@@ -1,0 +1,21 @@
+{
+  "name": "players_teams",
+  "homepage": "https://github.com/ckaren28/Friends",
+  "authors": [
+    "Karen Chin <c.karen28@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8"
+  }
+}

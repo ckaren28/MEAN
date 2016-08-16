@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang= 'en' ng-app = 'app' >
+    <head>
+        <meta charset="utf-8">
+        <title>products</title>
+        <script src = "bower_components/angular/angular.js"></script>
+        <script type="text/javascript">
+
+            var app = angular.module('app', []);
+
+            app.factory('productsFactory', [
+            '$http',
+            function($http) {
+                var factory = {};
+                var products = [
+                    {name: 'Apples', price: '1', qty: 50},
+                    {name: 'Car', price: '250000',qty: 50},
+                    {name: 'Computer', price: '1500',qty: 50},
+                    {name: 'Dog', price: '1000',qty: 50},
+                    {name: 'Hair Tie', price: '5',qty: 50}
+                ];
+
+                    factory.addProduct = function(data, callback) {
+                        data.qty = 50;
+                        products.push(data);
+                        callback(products);
+                    }
+                    factory.index = function(callback) {
+                        callback(products);
+                    }
+                    factory.buyProduct = function(data, callback) {
+                        if (Number.isInteger(data.qty)) {
+                            if (products[data.id].qty - data.qty > 0) {
+                                products[data.id].qty -= data.qty;
+                            } else {
+                                products[data.id].qty = 0;
+                            }
+                        }
+                        callback(products);
+                    }
+                    factory.deleteProduct = function(id, callback) {
+                        products.splice(id, 1);
+                        callback(products);
+                    }
+                    return factory;
+            }]);
+
+            app.controller('productsController', [
+            '$scope',
+            'productsFactory',
+            function($scope, productsFactory) {
+                // callback, but not as an anonymous function, rather a named function!
+                function setProducts(data) {
+                    $scope.products = data;
+                    $scope.product = {};
+                }
+
+                $scope.product = {};
+                $scope.products = [];
+
+                $scope.index = function() {
+                    productsFactory.index(setProducts);
+                }
+
+                $scope.index();
+                $scope.addProduct = function() {
+                    productsFactory.addProduct($scope.product, setProducts);
+                }
+                $scope.deleteProduct = function(id) {
+                    productsFactory.deleteProduct(id, setProducts);
+                }
+
+            }
+        ]);
+
+        app.controller('ordersController', [
+            '$scope',
+            'productsFactory',
+            function($scope, productsFactory) {
+                function setProducts(data) {
+                    $scope.products = data;
+                    $scope.product = {};
+                }
+                $scope.products = [];
+
+                productsFactory.index(setProducts);
+                $scope.buyProduct = function(id) {
+                    productsFactory.buyProduct({
+                        id: id,
+                        qty: 1
+                    }, setProducts);
+                }
+            }
+        ]);
+
+
+        </script>
+    </head>
+    <body>
+        <div ng-controller= "productsController" id ="productsController">
+
+        <h2>Products Controller</h2>
+            <form>
+                Product Name: <input type='text' ng-model = 'product.name'><br>
+                Product Price: <input type='text' ng-model = 'product.price' aria-label="price"><br>
+                <input type="submit" value= 'Add Product' ng-click='addProduct()'>
+            </form>    <hr>
+
+            <table>
+                <tr>
+                    <th> Name </th>
+                    <th> Price </th>
+                    <th> Actions </th>
+                </tr>
+                <tr ng-repeat= 'x in products'>
+                    <td>{{x.name}}</td>
+                    <td><span id="currency-default">{{x.price | currency}}</span></td>
+                    <td> <input type="submit" value="Delete" ng-click='deleteProduct($index)'> </td>
+                </tr>
+            </table>
+        </div> <br><hr><br>
+        <div ng-controller = "ordersController" id = "ordersController">
+            <table>
+                <tr>
+                    <th> Name </th>
+                    <th> Price </th>
+                    <th> Qty Available </th>
+                    <th> Actions </th>
+                </tr>
+                <tr ng-repeat= 'x in products'>
+                    <td>{{x.name}}</td>
+                    <td><span id="currency-default">{{x.price | currency}}</span></td>
+                    <td>{{x.qty}}</td>
+                    <td> <input type="submit" value="Buy" ng-click='buyProduct($index)'> </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </body>
+</html>
