@@ -1,0 +1,17 @@
+<div ng-controller = "ordersController" id = "ordersController">
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> Price </th>
+            <th> Qty Available </th>
+            <th> Actions </th>
+        </tr>
+        <tr ng-repeat= 'x in products'>
+            <td>{{x.name}}</td>
+            <td><span id="currency-default">{{x.price | currency}}</span></td>
+            <td>{{x.qty}}</td>
+            <td> <input type="submit" value="Buy" ng-click='buyProduct($index)'> </td>
+        </tr>
+    </table>
+
+</div>

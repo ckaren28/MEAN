@@ -9,7 +9,7 @@
             <th>Actions</th>
         </tr>
         <tr ng-repeat = "player in players">
-            <td ng-bind = 'layer.name'></td>
+            <td ng-bind = 'player.name'></td>
             <td><button ng-click="removePlayer($index)">Remove Player</button></td>
         </tr>
     </table>

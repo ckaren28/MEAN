@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends</title>
+	<script src="bower_components/angular/angluar.js" charset="utf-8"></script>
+	<script src="bower_components/angular-route/angluar-route.js" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+	<script src="assets/app.js"></script>
+	<script src="assets/factories/blankFactory.js"></script>
+	<script src="assets/controllers/nameController.js"></script>
+</head>
+<body>
+
+</body>
+<body ng-app='myApp'>
+<----- <a href="#/">Players</a> | <a href="#/partial2">Teams</a> | <a href="#/partial3">Associations</a>----->
+<div ng-view>
+	<!-- Partials will load here. -->
+</div>
+<!-- these connect to your controller files -->
+<div ng-controller='playersController'></div>
+<div ng-controller='teamsController'></div>
+</body>
+</html>
